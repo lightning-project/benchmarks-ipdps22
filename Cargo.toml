@@ -1,0 +1,26 @@
+[package]
+authors = ["stijn <s.heldens@esciencecenter.nl>"]
+edition = "2018"
+name = "benchmarks"
+version = "0.1.0"
+[dependencies]
+anyhow = "1.0.35"
+clap = "2.33.3"
+libc = "0.2.93"
+md5 = "0.7.0"
+rand = "0.8.3"
+rand_distr = "0.4.1"
+time = "0.2.26"
+
+[dependencies.lightning]
+path = "../lightning"
+
+[dependencies.log]
+version = "0.4.11"
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+debug = true
+opt-level = 3
+panic = "abort"
